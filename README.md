@@ -121,13 +121,13 @@ This repository also contains a Flask deployment of [bikeshare.py](bikeshare.py)
 
 #### Get Statistics
 
-![Screen Shot 2020-06-17 at 1.14.53 PM](readme_Images/flask_statistics_button)
+![stats_button](readme_Images/flask_statistics_button.png)
 
 When the user provides input, the `Get Statistics` button displays the statistics described in *Step 1*. 
 
 
 
-![Screen Shot 2020-06-17 at 1.14.53 PM](readme_Images/flask_graphs_button)
+![graphs_button](readme_Images/flask_graphs_button.png)
 
 When the user clicks the `Show Graphs` button, the webpage displays the statistics described in *Step 1*, and also displays `plotly.js` graphs of the following for the user's filter choice:
 
