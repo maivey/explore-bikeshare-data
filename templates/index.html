@@ -45,26 +45,22 @@
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
                 <form action = "{{ url_for('main') }}" method="POST">
-                  <!-- <form action="{{ url_for('main') }}" method="POST"> -->
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="my_city">Would you like to see data for Chicago, New York City, or Washington?</label>
-                        <!-- <select name = 'my_city' id="datetime" -->
                         <input name = "my_city" class="form-control" id="datetime" type="text" placeholder="Chicago" >
                       </li>
                     </ul>
-                  <!-- </div> -->
-                  <!-- <div class="form-group"> -->
+                 
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="month_day">Would you like to filter the data by month, day, both, or not at all? Type 'none' for no time filter.</label>
                         <input name = "month_day" class="form-control" id="city" type="text" placeholder="Both" >
                       </li>
                     </ul>
-                  <!-- </div> -->
+                    
                   <div id = 'month'>
-                  <!-- <div class="form-group" id = 'month'> -->
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label id = 'label_month' for="state">IF YOU CHOSE MONTH-- Which month - January, February, March, April, May, or June?</label>
@@ -80,14 +76,7 @@
                       </li>
                     </ul>
                   </div>
-                  <!-- <div id = 'graphs'>
-                    <ul class="list-group" id="filters">
-                      <li class="filter list-group-item">
-                        <label id = 'graphs' for="graphs">Would you like to see visualizations of the data?</label>
-                        <input name = "graphs" class="form-control" id="graphs" type="text" placeholder="Yes">
-                      </li>
-                    </ul>
-                  </div> -->
+                
                   </div>
                   <button id="filter-btn" type="submit" class="btn btn-default" name = "btn" value = "stats">Get Statistics</button>
                   <button id="filter-btn" type="submit" class="btn btn-default" name = "btn" value = "graphs">Show Graphs</button>
