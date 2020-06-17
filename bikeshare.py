@@ -142,6 +142,7 @@ def time_stats_month(df,filtered):
     most_common_month = common_months.index[0]
     month_count = common_months.values[0]
     print(f'Most common month : {str(most_common_month)}, Count : {str(month_count)}, Filter : {filtered}\n')
+    month_count = df['Start Time'].dt.month_name().value_counts().values[0]
 
 def time_stats_hour(df,filtered):
     """Computes and displays statistics on the most frequent hour of travel."""
@@ -305,6 +306,12 @@ def user_stats(df, city):
         # Calculate and display most common birth year
         common, freq = most_common(df,'Birth Year')
         print(f'Most common birth year : {int(common)}, Count : {freq}, Filter : {filtered}\n')
+
+
+        # common_birth = int(df['Birth Year'].value_counts().index[0])
+        # common_birth_count = df['Birth Year'].value_counts().values[0]
+        # print(f'Most common birth year : {common_birth}, Count : {common_birth_count}, Filter : {filtered}')
+
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))

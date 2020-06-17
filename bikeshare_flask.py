@@ -6,9 +6,9 @@ import datetime
 import json
 
 # Create a dictionary that maps the city name to the corresponding .csv file
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = { 'chicago': 'data/chicago.csv',
+              'new york city': 'data/new_york_city.csv',
+              'washington': 'data/washington.csv' }
 
 def load_data(city, month, day):
     """
@@ -42,7 +42,6 @@ def load_data(city, month, day):
     # Else if both month and day is "all", apply no month or day filter
 
     return df
-    
 def filtered_choice(df):
     common_months = df['Start Time'].dt.month_name().value_counts()
     common_days = df['Start Time'].dt.day_name().value_counts()
@@ -244,14 +243,11 @@ def user_stats(df, city):
 
         # Calculate and display most common birth year
         common, freq = most_common(df,'Birth Year')
-        print(f'Most common birth year : {int(common)}, Count : {freq}, Filter : {filtered}\n')
+        common = int(common)
+        print(f'Most common birth year : {common}, Count : {freq}, Filter : {filtered}\n')
         return subs, sub_count, users, user_count, m, m_count, f, f_count, earliest_birth, earliest_count, recent_birth, recent_count, common, freq
     else:
         return subs, sub_count, users, user_count
-        # common_birth = int(df['Birth Year'].value_counts().index[0])
-        # common_birth_count = df['Birth Year'].value_counts().values[0]
-        # print(f'Most common birth year : {common_birth}, Count : {common_birth_count}, Filter : {filtered}')
-
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
